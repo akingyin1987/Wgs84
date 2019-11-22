@@ -32,7 +32,6 @@ import java.io.Serializable;
  * #
  *
  * @ Description:                                          #
- * Company:重庆中陆承大科技有限公司
  * @ Author king
  * @ Date 2016/11/7 15:12
  * @ Version V1.0
@@ -57,7 +56,7 @@ public class RfidVo extends Model implements Serializable {
   public   String   dn;
 
   @Column
-  public   String   time;
+  public   long   time;
 
   @Column
   public   double    lat;

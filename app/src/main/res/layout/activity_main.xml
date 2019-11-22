@@ -31,6 +31,10 @@
         android:layout_alignParentBottom="true"
         android:padding="3dp"
         android:layout_margin="5dp">
+      <Button android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="绑定标签"
+          android:id="@+id/btn_bindrfid"/>
         <TextView android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"

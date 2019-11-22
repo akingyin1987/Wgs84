@@ -1,15 +1,19 @@
 apply plugin: 'com.android.application'
-apply plugin: 'android-apt'
+
 android {
-  compileSdkVersion 25
-  buildToolsVersion "24.0.3"
+  compileSdkVersion 28
+
   defaultConfig {
     applicationId "com.zlcdgroup.wgs84"
     minSdkVersion 14
-    targetSdkVersion 25
+    targetSdkVersion 28
     versionCode 1
     versionName "1.0"
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
   }
   buildTypes {
     release {
@@ -28,32 +32,24 @@ android {
 
     }
 
-    // Move the tests to tests/java, tests/res, etc...
-    instrumentTest.setRoot('tests')
 
-    // Move the build types to build-types/<type>
-    // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
-    // This moves them out of them default location under src/<type>/... which would
-    // conflict with src/ being used by the main source set.
-    // Adding new build types or product flavors should be accompanied
-    // by a similar customization.
-    debug.setRoot('build-types/debug')
-    release.setRoot('build-types/release')
   }
 }
 
 dependencies {
-  compile fileTree(include: ['*.jar'], dir: 'libs')
+  implementation fileTree(include: ['*.jar'], dir: 'libs')
   androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
     exclude group: 'com.android.support', module: 'support-annotations'
   })
-  compile 'com.android.support:appcompat-v7:25.0.0'
-  testCompile 'junit:junit:4.12'
-  compile files('libs/BaiduLBS_Android.jar')
-  compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
-  compile 'io.reactivex:rxandroid:1.2.1'
-  compile 'io.reactivex:rxjava:1.2.2'
-  compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.8.1@aar'
-  compile 'com.jakewharton:butterknife:8.4.0'
-  apt 'com.jakewharton:butterknife-compiler:8.4.0'
+  implementation 'com.android.support:appcompat-v7:28.0.0'
+  testImplementation 'junit:junit:4.12'
+  implementation files('libs/BaiduLBS_Android.jar')
+  implementation 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
+  implementation 'io.reactivex:rxandroid:1.2.1'
+  implementation 'io.reactivex:rxjava:1.2.2'
+  implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
+  implementation 'com.jakewharton:butterknife:10.2.0'
+  annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+  implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
+  implementation files('libs/jxl.jar')
 }

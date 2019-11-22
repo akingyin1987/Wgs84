@@ -31,7 +31,6 @@ import com.zlcdgroup.wgs84.db.RfidVo;
  * #
  *
  * @ Description:                                          #
- * Company:重庆中陆承大科技有限公司
  * @ Author king
  * @ Date 2016/11/7 15:56
  * @ Version V1.0
